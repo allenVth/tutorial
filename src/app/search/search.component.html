@@ -1,0 +1,136 @@
+<div id="cover" class="max-vh-100">
+    <div id="cover-caption">
+        <div class="container">
+            <div class="row text-white">
+                <div class="col-xl-5 col-lg-6 col-md-8 col-sm-10 mx-auto text-center form p-4">
+                    <h1 class="display-4 py-2 text-truncate">Enter a Pok&eacute;mon</h1>
+                    <div class="px-2">
+                        <form action="" class="justify-content-center">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Pokemon" [(ngModel)]="urlBreed"
+                                    name="breed">
+                                <!-- <input type="text" placeholder="Dogbreed" [(ngModel)]="urlBreed" name="breed"> -->
+                            </div>
+                            <button type="button" class="btn btn-primary btn-lg" (click)="click()">Search</button>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid h-100">
+    <div class="row justify-content-center h-100">
+        <div class="col-4 hidden-md-down" id="yellow">
+            <div>
+                <button type="button" class="btn btn-primary btn-lg myBt" (click)="showStats()">Stats</button>
+            </div>
+            <div>
+                <button type="button" class="btn btn-primary btn-lg myBt" (click)="showMoves()">Moves</button>
+            </div>
+            <div>
+                <button type="button" class="btn btn-primary btn-lg myBt" (click)="showAbilities()">Abilities</button>
+            </div>
+        </div>
+        <div class="col-10 col-sm-10 col-md-10 col-lg-8 col-xl-8">
+            <div *ngIf="imgUrl">
+                <div class="card shadow-lg p-3 mb-5 bg-white rounded" >
+                    <img class="card-img-top" [src]="imgUrl" alt="Card image" style="width:100%">
+                    <div class="card-body">
+                        <h4 class="card-title capitalize">{{is.pokemonName}}</h4>
+                        <div class="scrollable">
+                            <div class="card-text">
+                                <div [ngSwitch]="mySelection">
+                                    <span *ngSwitchCase="'stats'">
+                                        <p class="sub-title">Base stats</p>
+                                        <ul class="custom-img" *ngFor="let stat of is.statsCombined">
+                                            <li>
+                                                {{stat}}
+                                            </li>
+                                        </ul>
+                                    </span>
+                                    <span *ngSwitchCase="'abilities'">
+                                        <p class="sub-title">Abilities</p>
+                                        <ul class="custom-img" *ngFor="let ability of is.abilities">
+                                            <li>
+                                                {{ability}}
+                                            </li>
+                                        </ul>
+                                    </span>
+                                    <span *ngSwitchCase="'moves'">
+                                        <p class="sub-title">Learnable moves</p>
+                                        <ul *ngFor="let move of is.moves">
+                                            <li>
+                                                {{move}}
+                                            </li>
+                                        </ul>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>
+
+<div class="row align-items-center justify-content-center">
+    <div class="animaited">
+        <div id="StefTastan">
+			
+
+			<!-- charmander -->
+			<div id="charmander">
+				<div id="arms"></div>
+				<div id="feet"></div>
+				<div id="body">
+					<div id="eyes"></div>
+					<div id="pupils"></div>
+					<div id="nostrils"></div>
+					<div id="mouth"></div>
+					<div id="belly"></div>
+				</div>
+				<div id="tail"></div>
+				<div id="flame"></div>
+			</div>
+
+			<!-- bulbasaur -->
+			<div id="bulbasaur">
+				<div id="head">
+					<div id="eyes"></div>
+					<div id="pupils"></div>
+					<div id="nostrils"></div>
+					<div class="mouth"></div>
+				</div>
+				<div class="ears"></div>
+				<div id="body">
+					<div class="spots spot1"></div>
+					<div class="spots spot2"></div>
+					<div class="spots spot3"></div>
+				</div>
+				<div id="front-feet"></div>
+				<div id="back-feet"></div>
+				<div id="bulb"></div>
+			</div>
+	
+			<!-- squirtle -->
+			<div id="squirtle">
+				<div id="arms"></div>
+				<div id="feet"></div>
+				<div id="head">
+					<div id="eyes"></div>
+					<div id="pupils"></div>
+					<div id="nostrils"></div>
+					<div id="mouth"></div>
+				</div>
+				<div id="body"></div>
+				<div id="shell"></div>
+				<div id="tail"></div>
+			</div>
+
+		</div>
+    
+     </div>
+</div>
